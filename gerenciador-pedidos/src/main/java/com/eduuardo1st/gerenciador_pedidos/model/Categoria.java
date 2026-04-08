@@ -3,14 +3,12 @@ package com.eduuardo1st.gerenciador_pedidos.model;
 import jakarta.persistence.*;
 
 @Entity
-public class Produto {
+public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(unique = true, nullable = false)
     private String nome;
-    @Column(name = "valor")
-    private Double preco;
 
     public long getId() {
         return id;
@@ -28,16 +26,7 @@ public class Produto {
         this.nome = nome;
     }
 
-    public Double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(Double preco) {
-        this.preco = preco;
-    }
-
-    public Produto(String nome, Double preco) {
+    public Categoria(String nome) {
         this.nome = nome;
-        this.preco = preco;
     }
 }
